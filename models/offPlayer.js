@@ -42,7 +42,7 @@ module.exports = function (sequelize, DataTypes) {
     rushingTD: {
       type: DataTypes.INTEGER
     },
-    recptions: {
+    receptions: {
       type: DataTypes.INTEGER
     },
     receivingYDS: {
