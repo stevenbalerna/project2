@@ -1,62 +1,68 @@
-module.exports = function(sequelize, DataTypes) {
-  var Player = sequelize.define("Player", {
-    rank:{
+module.exports = function (sequelize, DataTypes) {
+  var DefTeam = sequelize.define("DefTeam", {
+    rank: {
       type: DataTypes.INTEGER
     },
     name: {
       type: DataTypes.STRING
     },
-    team:{
+    shortName: {
       type: DataTypes.STRING
     },
-    position:{
+    firstName: {
       type: DataTypes.STRING
     },
-    games:{
+    lastName: {
+      type: DataTypes.STRING
+    },
+    team: {
+      type: DataTypes.STRING
+    },
+    position: {
+      type: DataTypes.STRING
+    },
+    fantasyPosition: {
+      type: DataTypes.STRING
+    },
+    played: {
       type: DataTypes.INTEGER
     },
-    passYDS:{
+    tacklesForLost: {
       type: DataTypes.INTEGER
     },
-    passTD:{
+    sacks: {
       type: DataTypes.INTEGER
     },
-    passINT:{
+    quarterbackHits: {
       type: DataTypes.INTEGER
     },
-    rushYDS:{
+    interceptions: {
       type: DataTypes.INTEGER
     },
-    rushTD:{
+    fumblesRecovered: {
       type: DataTypes.INTEGER
     },
-    recREC:{
+    safeties: {
       type: DataTypes.INTEGER
     },
-    recYDS:{
+    defensiveTD: {
       type: DataTypes.INTEGER
     },
-    recTD:{
+    returnTD: {
       type: DataTypes.INTEGER
     },
-    defSCK:{
+    pointsAllowed: {
       type: DataTypes.INTEGER
     },
-    defINT:{
-      type: DataTypes.INTEGER
-    },
-    defFF:{
-      type: DataTypes.INTEGER
-    },
-    defFR:{
-      type: DataTypes.INTEGER
-    },
-    fptsG:{
+    fantasyPPG: {
       type: DataTypes.DECIMAL
     },
-    fpts:{
+    fantasyPoints: {
       type: DataTypes.DECIMAL
     }
+  },
+  {
+    timestamps:false
   });
-  return Player;
+  return DefTeam;
 };
