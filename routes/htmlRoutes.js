@@ -3,8 +3,10 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.OffPlayer.findOne({where:{name: "Tom Brady"}}).then(function(player) {
-      res.render("index", player);
+    db.Player.findOne({where:{name: "Tom Brady"}}).then(function(player) {
+      console.log(player);
+
+      res.end();
     });
   });
 
