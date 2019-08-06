@@ -6,7 +6,7 @@ module.exports = function(app) {
     db.Player.findOne({where:{name: "Tom Brady"}}).then(function(player) {
       console.log(player);
 
-      res.end();
+      res.render("index", player);
     });
   });
 
