@@ -1,18 +1,26 @@
    <link rel="stylesheet" href="/public/styles/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
-
-<div id="home">
-  <div class="jumbotron jumbotron-fluid bg-primary">
-    <div class="container">
-      <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg"
-        class="rounded mx-auto d-block">
-      <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
-      <p class="lead">
-        <h2 class="text-center">
-          <solid>Find out who will make you a fantasy football champion!</solid>
-        </h2>
-      </p>
-    </div>
+ <div class="container1">
+      
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg" alt="NFL teams" height="400px" width="100%"   >
+    
+    <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
+    <p class="lead"><h2 class="text-center" ><solid>Find out who will make you a fantasy football champion!</solid></h2></p>
   </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+        <h2>This is our Home Page!</h2>
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+           <div class="card-deck">
+  
+  </div>
+  
+</div>
+
+    <div class="players">
 
   <h1 class="text-center">{{msg}}</h1>
   <div class="container" style="display: flex; justify-content: space-around;">
@@ -24,6 +32,7 @@
       <div class="card-body">
         <h3 class="card-title">Patrick Mahomes</h3>
         <p class="card-text">Position: QB</p>
+      
         <h5>2018 Stats</h5>
         <p><small>Passing Yards: 5,000 Yards</small></p>
         <p><small>Passing TDs:</small></p>
@@ -42,45 +51,8 @@
         <p><small>Fantasy Points:</small></p>
         <p><small>Fantasy Points Per Game:</small></p>
         <a href="#" class="btn btn-primary">Player Page</a>
-  <div class="container1">
-      
-    <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg" alt="NFL teams" height="400px" width="100%"   >
-    
-    <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
-    <p class="lead"><h2 class="text-center" ><solid>Find out who will make you a fantasy football champion!</solid></h2></p>
-  </div>
-</div>
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-           <div class="card-deck">
-  <div class="card">
-    <img class="card-img-top1" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">1st Comparison Pick</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top2" src="..." alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">2nd Comparison Pick</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
-    </div>
-  </div>
-  
-</div>
-          <button id="submit"  class="btn btn-primary float-right">Submit</button>
+ 
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form> 
 
         <h3>Examples:</h3>
@@ -96,6 +68,13 @@
     </div>
     {{!-- </div> --}}
     {{!-- </div> --}}
+
+    <div class="sidenav">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#clients">Clients</a>
+  <a href="#contact">Contact</a>
+</div>
 
 
     {{!-- <div class="row justify-content-lg-center"> --}}
@@ -127,10 +106,12 @@
     
       </div>
     </div>
+    </div>
+    
     {{!-- </div> --}}
     {{!-- </div> --}}
   </div>
-
+    </div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/index.js"></script>

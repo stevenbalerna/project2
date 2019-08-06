@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Player.findAll({}).then(function(dbExamples) {
+    db.OffPlayer.findAll({}).then(function(dbExamples) {
       res.render("index", {
         msg: "Player Comparison",
         examples: dbExamples
