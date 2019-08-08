@@ -16,11 +16,11 @@
   padding: 10%;
   background-color: beige;
 }
-
+.profileCard{
+  border: 2px solid black;
+}
 body{
-  background-image: url("/assets/field.png");
-  background-size:contain;
-  background-repeat: repeat-y;
+
 }
 
 #submit:hover{
