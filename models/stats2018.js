@@ -35,17 +35,12 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Stats2018.associate = function(models) {
-    Stats2018.belongsTo(models.Player, {
-      foreignKey: {
-        allowNull: true
-      }
+    Stats2018.hasOne(models.Player, {
+      onDelete: "cascade"
     });
-    Stats2018.belongsTo(models.Team, {
-      foreignKey: {
-        allowNull: true
-      }
+    Stats2018.hasOne(models.Team, {
+      onDelete: "cascade"
     });
   };
-
   return Stats2018;
 };

@@ -1,3 +1,26 @@
-{{#each player.bio as |val key|}}
-    <p>{{key}} : {{val}}</p>
-{{/each}}
+<ul>
+    <li>
+        <img src="{{player.profilePic}}" alt="">
+        <ul>
+            {{#each player.bio as |val key|}}
+            <li>
+                <strong>{{key}}</strong> : {{val}}
+            </li>
+            {{/each}}
+        </ul>
+        <ul>
+            {{#each player.stats2018 as |val key|}}
+            <li>
+                <strong>{{key}}</strong> : {{val}}
+            </li>
+            {{/each}}
+        </ul>
+        <ul>
+            {{#each player.projections2019 as |val key|}}
+            <li>
+                <strong>{{key}}</strong> : {{val}}
+            </li>
+            {{/each}}
+        </ul>
+    </li>
+</ul>

@@ -15,14 +15,15 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Player.associate = function(models) {
-    Player.hasOne(models.Stats2018, {
-      onDelete: "cascade"
+    Player.belongsTo(models.Stats2018, {
+      foreignKey: {
+        allowNull: true
+      }
     });
-  };
-
-  Player.associate = function(models) {
-    Player.hasOne(models.Projections2019, {
-      onDelete: "cascade"
+    Player.belongsTo(models.Projections2019,{
+      foreignKey: {
+        allowNull: true
+      }
     });
   };
 

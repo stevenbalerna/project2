@@ -33,15 +33,11 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   Projections2019.associate = function(models) {
-    Projections2019.belongsTo(models.Player, {
-      foreignKey: {
-        allowNull: true
-      }
+    Projections2019.hasOne(models.Player, {
+      onDelete: "cascade"
     });
-    Projections2019.belongsTo(models.Team, {
-      foreignKey: {
-        allowNull: true
-      }
+    Projections2019.hasOne(models.Team, {
+      onDelete: "cascade"
     });
   };
 

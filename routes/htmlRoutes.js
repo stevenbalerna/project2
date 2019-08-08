@@ -17,7 +17,7 @@ function formatPlayerData(player){
     stats2018: {
 
     },
-    projections:{
+    projections2019:{
     }
   };
 
@@ -36,13 +36,15 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/profile/:id", function(req, res) {
-    db.Player.findOne({ where: { id: req.params.id } }).then(function(dbPlayer) {
+  app.get("/profile/players/:id", function(req, res) {
 
-      var outputPlayer = formatPlayerData(dbPlayer);
+    db.Stats2018.findOne({include:[db.Player],where:{PlayerId: req.params.id}, }).then(function(p) {
 
+      console.log(p);
+
+      var player = formatPlayerData(p);
       res.render("profile", {
-        player: outputPlayer
+        player: player
       });
     });
   });
