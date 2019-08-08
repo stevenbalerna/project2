@@ -9,12 +9,22 @@ module.exports = function (sequelize, DataTypes) {
     DOB: DataTypes.STRING,
     experience: DataTypes.STRING,
     drafted: DataTypes.STRING,
-    college: DataTypes.STRING,
-    stats2018:  DataTypes.INTEGER,
-    projections2019: DataTypes.INTEGER
+    college: DataTypes.STRING
   },{
     timestamps: false
   });
+
+  Player.associate = function(models) {
+    Player.hasOne(models.Stats2018, {
+      onDelete: "cascade"
+    });
+  };
+
+  Player.associate = function(models) {
+    Player.hasOne(models.Projections2019, {
+      onDelete: "cascade"
+    });
+  };
 
   return Player;
 };
