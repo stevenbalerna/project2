@@ -1,6 +1,7 @@
 var db = require("../models");
 
 function formatPlayerData(player){
+  var stats = player.Stats2018.dataValues;
   var newPlayer = {
     profilePic: player.profilePic,
     bio: {
@@ -13,13 +14,16 @@ function formatPlayerData(player){
       "Experience": player.experience,
       "Drafted": player.drafted,
       "College": player.college
-    },
-    stats2018: {
-
-    },
-    projections2019:{
     }
   };
+
+  switch (player.position) {
+  case "QB":
+    break;
+
+  default:
+    break;
+  }
 
   return newPlayer;
 }
@@ -37,11 +41,7 @@ module.exports = function(app) {
 
   // Load example page and pass in an example by id
   app.get("/profile/players/:id", function(req, res) {
-
-    db.Stats2018.findOne({include:[db.Player],where:{PlayerId: req.params.id}, }).then(function(p) {
-
-      console.log(p);
-
+    db.Player.findOne({where:{id: req.params.id}, include:[db.Stats2018, db.Projections2019],}).then(function(p) {
       var player = formatPlayerData(p);
       res.render("profile", {
         player: player
