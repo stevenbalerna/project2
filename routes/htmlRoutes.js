@@ -33,9 +33,18 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Player.findOne({where:{name: "Tom Brady"}}).then(function(player) {
 
-
-
-      res.render("index", player);
+      res.render("index", {
+        player:player
+      });
+    });
+  });
+  // Load example page and pass in an example by id
+  app.get("/profile/players/:id", function(req, res) {
+    db.Player.findOne({where:{id: req.params.id}, include:[db.Stats2018, db.Projections2019],}).then(function(p) {
+      var player = formatPlayerData(p);
+      res.render("profile", {
+        player: player
+      });
     });
   });
 
@@ -48,7 +57,6 @@ module.exports = function(app) {
       });
     });
   });
-
 //   // Render 404 page for any unmatched routes
 //   app.get("*", function(req, res) {
 //     res.render("404");
