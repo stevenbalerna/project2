@@ -9,12 +9,23 @@ module.exports = function (sequelize, DataTypes) {
     DOB: DataTypes.STRING,
     experience: DataTypes.STRING,
     drafted: DataTypes.STRING,
-    college: DataTypes.STRING,
-    stats2018:  DataTypes.INTEGER,
-    projections2019: DataTypes.INTEGER
+    college: DataTypes.STRING
   },{
     timestamps: false
   });
+
+  Player.associate = function(models) {
+    Player.belongsTo(models.Stats2018, {
+      foreignKey: {
+        allowNull: true
+      }
+    });
+    Player.belongsTo(models.Projections2019,{
+      foreignKey: {
+        allowNull: true
+      }
+    });
+  };
 
   return Player;
 };

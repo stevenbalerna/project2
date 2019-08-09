@@ -1,25 +1,62 @@
-<div id="home">
-  <div class="jumbotron jumbotron-fluid bg-primary">
-    <div class="container">
-      <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg"
-        class="rounded mx-auto d-block">
-      <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
-      <p class="lead">
-        <h2 class="text-center">
-          <solid>Find out who will make you a fantasy football champion!</solid>
-        </h2>
-      </p>
-    </div>
+   <link rel="stylesheet" href="/public/styles/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">
+ <div class="container1">
+      
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg" alt="NFL teams" height="400px" width="100%"   >
+    
+    <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
+    <p class="lead"><h2 class="text-center" ><solid>Find out who will make you a fantasy football champion!</solid></h2></p>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h1>{{msg}}</h1>
+    
+        <form class="clearfix mb-4" action="POST">
+          <div class="form-group">
+           <div class="card-deck">
+  
   </div>
 
-  <h1 class="text-center">{{msg}}</h1>
-  <div class="container" style="display: flex; justify-content: space-around;">
+  <div class="container" style="display: static; justify-content: space-around;">
     {{!-- <div class="row justify-content-lg-center">
   <div class="col-lg-2"> --}}
-    <div class="card" style="width: 25rem;">
-      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/MahoPa00_2018.jpg"
-        class="card-img-top" alt="Mahomes">
-      <div class="card-body">
+        <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg" alt="Avatar" style="">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> 
+      <p>Architect  Engineer</p> 
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div>
+  
+</div>
+
+ <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg" alt="Avatar" style="">
+    </div>
+    <div class="flip-card-back">
+      <h1>John Doe</h1> 
+      <p>Architect  Engineer</p> 
+      <p>We love that guy</p>
+    </div>
+  </div>
+</div>
+  
+</div>
+
+
+<body class="p-3 mb-2 bg-success text-white">
+    
+  <h1 class="text-center">{{msg}}</h1>
+ 
+
         <h3 class="card-title">{{name}}</h3>
         <p class="card-text">Position: {{fantasyPosition}}</p>
         <h5>2018 Stats</h5>
@@ -40,45 +77,32 @@
         <p><small>Fantasy Points:</small></p>
         <p><small>Fantasy Points Per Game:</small></p>
         <a href="#" class="btn btn-primary">Player Page</a>
+ 
+          <button id="submit" class="btn btn-primary float-right">Submit</button>
+        </form> 
+
+        <h3>Examples:</h3>
+        <ul id="example-list" class="list-group">
+          {{#each examples}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.text}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
     {{!-- </div> --}}
     {{!-- </div> --}}
 
-
-    {{!-- <div class="row justify-content-lg-center"> --}}
-    {{!-- <div class="col-lg-2"> --}}
-    <div class="card" style="width: 25rem;">
-      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg"
-        class="card-img-top" alt="Watson">
-      <div class="card-body">
-        <h3 class="card-title">Deshaun Watson</h3>
-        <p class="card-text">Position: QB</p>
-        <h5>2018 Stats</h5>
-        <p><small>Passing Yards:</small></p>
-        <p><small>Passing TDs:</small></p>
-        <p><small>INT:</small></p>
-        <p><small>Rushing Yards:</small></p>
-        <p><small>Passing TDs:</small></p>
-        <p><small>Fantasy Points:</small></p>
-        <p><small>Fantasy Points Per Game:</small></p>
-        
-        <h5>2019 Projections</h5>
-        <p><small>Passing Yards:</small></p>
-        <p><small>Passing TDs:</small></p>
-        <p><small>INT:</small></p>
-        <p><small>Rushing Yards:</small></p>
-        <p><small>Passing TDs:</small></p>
-        <p><small>Fantasy Points:</small></p>
-        <p><small>Fantasy Points Per Game:</small></p>
-        <a href="#" class="btn btn-primary">Player Page</a>
     
-      </div>
-    </div>
+
+   
+    
     {{!-- </div> --}}
     {{!-- </div> --}}
   </div>
-
-
+    </div>
+</body>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="/js/index.js"></script>
