@@ -11,14 +11,16 @@
    color: aliceblue
  }
 
+ .card-img-top{
+
+ }
+
 .players{
   background-image: url("/assets/tile.png") ;
   padding: 10%;
-  background-color: beige;
+  
 }
-.profileCard{
-  border: 2px solid black;
-}
+
 body{
 
 }
@@ -32,36 +34,55 @@ background-color: cadetblue
   
 }
 
-.sidenav {
-  width: 130px;
-  position: fixed;
-  z-index: 1;
-  top: 400px;
-  left: 10px;
-  background: #eee;
-  overflow-x: hidden;
-  padding: 8px 0;
+.row{
+
 }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #2196F3;
-  display: block;
+
+
+.flip-card, .flip-card img {
+  background-color: tan;
+ 
+  width: 300px;
+  height: 350px;
+  border: 1px solid rgb(0, 0, 0);
+  
+   /* Remove this if you don't want the 3D effect */
 }
 
-.sidenav a:hover {
-  color: #064579;
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.main {
-  margin-left: 140px; /* Same width as the sidebar + left position in px */
-  font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: aqua;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  opacity: .6;
+  color: rgb(47, 0, 255);
+  transform: rotateY(180deg);
 }
