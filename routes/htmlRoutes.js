@@ -1,6 +1,7 @@
 var db = require("../models");
 
 function formatPlayerData(player){
+  var stats = player.Stats2018.dataValues;
   var newPlayer = {
     profilePic: player.profilePic,
     bio: {
@@ -13,13 +14,16 @@ function formatPlayerData(player){
       "Experience": player.experience,
       "Drafted": player.drafted,
       "College": player.college
-    },
-    stats2018: {
-
-    },
-    projections2019:{
     }
   };
+
+  switch (player.position) {
+  case "QB":
+    break;
+
+  default:
+    break;
+  }
 
   return newPlayer;
 }
@@ -29,19 +33,14 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Player.findOne({where:{name: "Tom Brady"}}).then(function(player) {
 
-
-
-      res.render("index", player);
+      res.render("index", {
+        player:player
+      });
     });
   });
-
   // Load example page and pass in an example by id
   app.get("/profile/players/:id", function(req, res) {
-
-    db.Stats2018.findOne({include:[db.Player],where:{PlayerId: req.params.id}, }).then(function(p) {
-
-      console.log(p);
-
+    db.Player.findOne({where:{id: req.params.id}, include:[db.Stats2018, db.Projections2019],}).then(function(p) {
       var player = formatPlayerData(p);
       res.render("profile", {
         player: player
@@ -49,6 +48,15 @@ module.exports = function(app) {
     });
   });
 
+  // Load example page and pass in an example by id
+  app.get("/profile/players/:id", function(req, res) {
+    db.Player.findOne({where:{id: req.params.id}, include:[db.Stats2018, db.Projections2019],}).then(function(p) {
+      var player = formatPlayerData(p);
+      res.render("profile", {
+        player: player
+      });
+    });
+  });
 //   // Render 404 page for any unmatched routes
 //   app.get("*", function(req, res) {
 //     res.render("404");
