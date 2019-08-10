@@ -2,10 +2,7 @@ var db = require("../models");
 
 function formatPlayerData(player){
   var stats = player.Stats2018.dataValues;
-
   var projections = player.Projections2019.dataValues;
-
-
   var newPlayer = {
     profilePic: player.profilePic,
     hasProjections: false,
@@ -122,22 +119,37 @@ function formatPlayerData(player){
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
+    res.redirect("/QB");
+  });
 
-    res.render("index");
+  app.get("/:pos", function(req, res) {
+    db.Player.findAll({where: {position: req.params.pos}, include:[db.Stats2018, db.Projections2019]}).then(function(data){
 
+      var players = data.map(function(player){
+        return formatPlayerData(player);
+      });
+
+      console.log(players);
+      res.render("index");
+    });
+    
+  });
+
+  app.get("/player/create", function(req, res) {
+    res.render("form");
   });
 
   app.get("/profile/players/:id", function(req, res) {
-    db.Player.findOne({where:{id: req.params.id}, include:[db.Stats2018, db.Projections2019],}).then(function(p) {
-      var player = formatPlayerData(p);
-
-      console.log(p);
+    db.Player.findOne({where:{id: req.params.id}, include:[db.Stats2018, db.Projections2019],}).then(function(data) {
+      var player = formatPlayerData(data);
       res.render("profile", {
         player: player
       });
     });
   });
 };
+
+
 
 
 

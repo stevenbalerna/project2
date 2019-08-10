@@ -23,16 +23,18 @@
 
 
 body{
+  
   color: white;
   background: radial-gradient(#333a 40%,#000), url(../assets/footballTexture.png);
   
 }
 
-
-html, body{
-  margin: 0;
-  padding: 0;
+.container{
+  min-height: 1000px;
 }
+
+
+
 
 #submit:hover{
 background-color: cadetblue
