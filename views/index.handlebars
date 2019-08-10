@@ -1,60 +1,66 @@
+<div class="container1">
 
- <div class="container1">
-      
-    <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg" alt="NFL teams" height="400px" width="100%"   >
-    
-    <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
-    <p class="lead"><h2 class="text-center" ><solid>Find out who will make you a fantasy football champion!</solid></h2></p>
-  </div>
+  <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg" alt="NFL teams"
+    height="400px" width="100%">
+
+  <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
+  <p class="lead">
+    <h2 class="text-center">
+      <solid>Find out who will make you a fantasy football champion!</solid>
+    </h2>
+  </p>
 </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-    
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-           <div class="card-deck">
-  
-  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h1>{{msg}}</h1>
 
-  <div class="container" style="display: static; justify-content: space-around;">
-    {{!-- <div class="row justify-content-lg-center">
+      <form class="clearfix mb-4" action="POST">
+        <div class="form-group">
+          <div class="card-deck">
+
+          </div>
+
+          <div class="container" style="display: static; justify-content: space-around;">
+            {{!-- <div class="row justify-content-lg-center">
   <div class="col-lg-2"> --}}
-        <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg" alt="Avatar" style="">
-    </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1> 
-      <p>Architect  Engineer</p> 
-      <p>We love that guy</p>
-    </div>
-  </div>
-</div>
-  
-</div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg"
+                    alt="Avatar" style="">
+                </div>
+                <div class="flip-card-back">
+                  <h1>John Doe</h1>
+                  <p>Architect Engineer</p>
+                  <p>We love that guy</p>
+                </div>
+              </div>
+            </div>
 
- <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg" alt="Avatar" style="">
-    </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1> 
-      <p>Architect  Engineer</p> 
-      <p>We love that guy</p>
-    </div>
-  </div>
-</div>
-  
-</div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg"
+                  alt="Avatar" style="">
+              </div>
+              <div class="flip-card-back">
+                <h1>John Doe</h1>
+                <p>Architect Engineer</p>
+                <p>We love that guy</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
 
 
 
-  <h1 class="text-center">{{msg}}</h1>
- 
+        <h1 class="text-center">{{msg}}</h1>
+
 
         <h3 class="card-title">{{name}}</h3>
         <p class="card-text">Position: {{fantasyPosition}}</p>
@@ -66,7 +72,7 @@
         <p><small>Rushing TDs: {{rushingTD}}</small></p>
         <p><small>Fantasy Points: {{fantasyPoints}}</small></p>
         <p><small>Fantasy Points Per Game: {{fantasyPPG}}</small></p>
-      
+
         <h5>2019 Projections</h5>
         <p><small>Passing Yards:</small></p>
         <p><small>Passing TDs:</small></p>
@@ -76,33 +82,41 @@
         <p><small>Fantasy Points:</small></p>
         <p><small>Fantasy Points Per Game:</small></p>
         <a href="#" class="btn btn-primary">Player Page</a>
- 
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form> 
 
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+        <button id="submit" class="btn btn-primary float-right">Submit</button>
+      </form>
+
+      </ul>
     </div>
-    {{!-- </div> --}}
-    {{!-- </div> --}}
-
-    
-
-   
-    
-    {{!-- </div> --}}
-    {{!-- </div> --}}
   </div>
-    </div>
-    
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/js/index.js"></script>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table border text-center">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            {{#each players.[0].Stats2018 as |val key|}}
+            <th>{{key}}</th>
+            {{/each}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each players}}
+          <tr>
+            <td>{{plusOne @index}}</td>
+            <td><a href="/profile/players/{{this.id}}">{{this.bio.Name}}</a></td>
+            {{#each this.Stats2018 as |val key|}}
+            <td class="textSmall">{{val}}</td>
+            {{/each}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

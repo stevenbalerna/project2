@@ -20,6 +20,9 @@
   padding: 10%;
   
 }
+/* .textSmall{
+  font-size: 12px;
+} */
 
 
 body{
@@ -118,6 +121,10 @@ background-color: cadetblue
   height: 250px;
   background: #fff;
   border: 2px solid #000;
+}
+
+table a{
+  color: #fff;
 }
 
 
