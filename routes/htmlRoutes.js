@@ -4,8 +4,8 @@ function formatPlayerData(player){
   var stats = player.Stats2018.dataValues;
   var projections = player.Projections2019.dataValues;
   var newPlayer = {
+    id: player.id,
     profilePic: player.profilePic,
-    hasProjections: false,
     bio: {
       "Name" : player.name,
       "Position" : player.position,
@@ -129,10 +129,21 @@ module.exports = function(app) {
         return formatPlayerData(player);
       });
 
-      console.log(players);
-      res.render("index");
+      players.sort(function(a,b){
+        return parseInt(b.Stats2018["Fantasy PTs"]) - parseInt(a.Stats2018["Fantasy PTs"]);
+      });
+
+      
+      res.render("index", {
+        players: players,
+        helpers: {
+          plusOne: function(param){
+            return parseInt(param) + 1;
+          }
+        }
+      });
     });
-    
+
   });
 
   app.get("/player/create", function(req, res) {

@@ -11,15 +11,16 @@
    color: aliceblue
  }
 
- .card-img-top{
-
- }
+ 
 
 .players{
   background-image: url("/assets/tile.png") ;
   padding: 10%;
   
 }
+/* .textSmall{
+  font-size: 12px;
+} */
 
 
 body{
@@ -40,25 +41,13 @@ body{
 background-color: cadetblue
 }
 
-.card-body{
- 
-  
-}
-
-.row{
-
-}
 
 
 
 .flip-card, .flip-card img {
-  background-color: tan;
- 
   width: 300px;
-  height: 350px;
-  border: 1px solid rgb(0, 0, 0);
-  
-   /* Remove this if you don't want the 3D effect */
+  height: 400px;
+  margin: 0 auto;
 }
 
 /* This container is needed to position the front and back side */
@@ -86,20 +75,17 @@ background-color: cadetblue
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-  background-color: aqua;
-  color: black;
+  background-color: #fff;
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
-  opacity: .6;
-  color: rgb(47, 0, 255);
+  background-color: #000;
   transform: rotateY(180deg);
 }
 
 .profileContainer{
-  background: #0005;
+  background: #0009;
   border: 2px solid #000a;
   border-radius: 10px;
 }
@@ -119,6 +105,22 @@ background-color: cadetblue
   background: #fff;
   border: 2px solid #000;
 }
+
+.text64{
+  font-size: 48px;
+}
+
+td button{
+  background: #ccf;
+  padding: 2px;
+  font-size: 12px;
+}
+
+#compareTable tr.selected{
+  background: #ff05;
+  border: 1px solid #ff0;
+}
+
 
 
 

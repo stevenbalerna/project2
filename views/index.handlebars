@@ -1,108 +1,104 @@
+<div class="container text-center justify-content-center py-3">
 
- <div class="container1">
-      
-    <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg" alt="NFL teams" height="400px" width="100%"   >
-    
-    <h1 class="display-4 text-center">Fantasy Draft Helper!</h1>
-    <p class="lead"><h2 class="text-center" ><solid>Find out who will make you a fantasy football champion!</solid></h2></p>
-  </div>
-</div>
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-    
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-           <div class="card-deck">
-  
-  </div>
-
-  <div class="container" style="display: static; justify-content: space-around;">
-    {{!-- <div class="row justify-content-lg-center">
-  <div class="col-lg-2"> --}}
-        <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg" alt="Avatar" style="">
-    </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1> 
-      <p>Architect  Engineer</p> 
-      <p>We love that guy</p>
+  <div class="row text-center my-3">
+    <div class="col-12">
+      <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/0e/8b/b70e8bfe35500374d6224e2ee51c0065.jpg"
+        alt="NFL teams">
     </div>
   </div>
-</div>
-  
-</div>
-
- <div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="https://d395i9ljze9h3x.cloudfront.net/req/20180910/images/headshots/WatsDe00_2018.jpg" alt="Avatar" style="">
-    </div>
-    <div class="flip-card-back">
-      <h1>John Doe</h1> 
-      <p>Architect  Engineer</p> 
-      <p>We love that guy</p>
-    </div>
-  </div>
-</div>
-  
-</div>
 
 
+  <div class="row my-4 profileContainer">
+    <div class="col-6 my-5">
+      <div class="row my-4">
+        <div class="col-12">
+          <div id="player1Bio">
 
-  <h1 class="text-center">{{msg}}</h1>
- 
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12">
+          <h3>2018 Stats</h3>
+          <div id="player1Stats">
 
-        <h3 class="card-title">{{name}}</h3>
-        <p class="card-text">Position: {{fantasyPosition}}</p>
-        <h5>2018 Stats</h5>
-        <p><small>Passing Yards: {{passingYDS}}</small></p>
-        <p><small>Passing TDs: {{passingTD}}</small></p>
-        <p><small>INT: {{passingINT}}</small></p>
-        <p><small>Rushing Yards: {{rushingYDS}}</small></p>
-        <p><small>Rushing TDs: {{rushingTD}}</small></p>
-        <p><small>Fantasy Points: {{fantasyPoints}}</small></p>
-        <p><small>Fantasy Points Per Game: {{fantasyPPG}}</small></p>
-      
-        <h5>2019 Projections</h5>
-        <p><small>Passing Yards:</small></p>
-        <p><small>Passing TDs:</small></p>
-        <p><small>INT:</small></p>
-        <p><small>Rushing Yards:</small></p>
-        <p><small>Passing TDs:</small></p>
-        <p><small>Fantasy Points:</small></p>
-        <p><small>Fantasy Points Per Game:</small></p>
-        <a href="#" class="btn btn-primary">Player Page</a>
- 
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form> 
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12">
+          <h3>2019 Projections</h3>
+          <div id="player1Projections">
 
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
-    {{!-- </div> --}}
-    {{!-- </div> --}}
+    <div class="col-6 my-5">
+      <div class="row my-4">
+        <div class="col-12">
+          <div id="player2Bio">
 
-    
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12">
+          <h3>2018 Stats</h3>
+          <div id="player2Stats">
 
-   
-    
-    {{!-- </div> --}}
-    {{!-- </div> --}}
-  </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12">
+          <h3>2019 Projections</h3>
+          <div id="player2Projections">
+
+          </div>
+        </div>
+      </div>
     </div>
-    
+  </div>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="/js/index.js"></script>
+
+  <div class="row justify-content-center">
+    <div class="col-3">
+      <select class="form-control" id="filterDrop">
+        <option value="QB">QB</option>
+        <option value="WR">WR</option>
+        <option value="RB">RB</option>
+        <option value="TE">TE</option>
+        <option value="K">K</option>
+      </select>
+    </div>
+    <div class="col-12">
+
+      <table class="table table-sm table-hover table-bordered bg-light text-dark text-center" id="compareTable">
+        <thead class="thead-dark">
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            {{#each players.[0].Stats2018 as |val key|}}
+            <th>{{key}}</th>
+            {{/each}}
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each players}}
+          <tr data-player={{this.id}}>
+            <td>{{plusOne @index}}</td>
+            <td><a href="/profile/players/{{this.id}}">{{this.bio.Name}}</a></td>
+            {{#each this.Stats2018 as |val key|}}
+            <td>{{val}}</td>
+            {{/each}}
+            <td><button data-target="{{@index}}">Select</button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
