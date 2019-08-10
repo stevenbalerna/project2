@@ -129,7 +129,11 @@ module.exports = function(app) {
         return formatPlayerData(player);
       });
 
-      console.log(players);
+      players.sort(function(a,b){
+        return parseInt(b.Stats2018["Fantasy PTs"]) - parseInt(a.Stats2018["Fantasy PTs"]);
+      });
+
+      
       res.render("index", {
         players: players,
         helpers: {
