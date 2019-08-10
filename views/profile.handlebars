@@ -1,26 +1,87 @@
-<ul>
-    <li>
-        <img src="{{player.profilePic}}" alt="">
-        <ul>
-            {{#each player.bio as |val key|}}
-            <li>
-                <strong>{{key}}</strong> : {{val}}
-            </li>
-            {{/each}}
-        </ul>
-        <ul>
-            {{#each player.stats2018 as |val key|}}
-            <li>
-                <strong>{{key}}</strong> : {{val}}
-            </li>
-            {{/each}}
-        </ul>
-        <ul>
-            {{#each player.projections2019 as |val key|}}
-            <li>
-                <strong>{{key}}</strong> : {{val}}
-            </li>
-            {{/each}}
-        </ul>
-    </li>
-</ul>
+<div class="container p-3 my-3 profileContainer">
+    <div class="row">
+        <div class="col-12">
+
+            <div class="profileCard" id="bioCard">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h2>{{player.bio.Name}}</h2>
+                        <h5>- {{player.bio.Position}} -</h5>
+                        <hr>
+                    </div>
+                    <div class="col-4">
+                        <img src="{{player.profilePic}}" class="profilePic" alt="">
+                    </div>
+                    <div class="col-4">
+                        <h5>Team</h5>
+                        <p>{{player.bio.Team}}</p>
+                        <h5>Height</h5>
+                        <p>{{player.bio.Height}}</p>
+                        <h5>Weight</h5>
+                        <p>{{player.bio.Weight}}</p>
+                        <h5>DoB</h5>
+                        <p>{{player.bio.DoB}}</p>
+                    </div>
+                    <div class="col-4">
+                        <h5>Experience</h5>
+                        <p>{{player.bio.Experience}}</p>
+                        <h5>Drafted</h5>
+                        <p>{{player.bio.Drafted}}</p>
+                        <h5>College</h5>
+                        <p>{{player.bio.College}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="profileCard" id="statsCard">
+                <h2>2018 Season Stats</h2>
+                        
+                        <hr>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            {{#each player.Stats2018 as |val key|}}
+                            <th>{{key}}</th>
+                            {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each player.Stats2018 as |val key|}}
+                            <td>{{val}}</td>
+                            {{/each}}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="profileCard" id="statsCard">
+                <h2>2019 Season Projections</h2>
+                        
+                        <hr>
+                <table class="table table-bordered text-center">
+                    <thead>
+                        <tr>
+                            {{#each player.Projections2019 as |val key|}}
+                            <th>{{key}}</th>
+                            {{/each}}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each player.Projections2019 as |val key|}}
+                            <td>{{val}}</td>
+                            {{/each}}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
