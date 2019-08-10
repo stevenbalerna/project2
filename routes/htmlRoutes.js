@@ -152,12 +152,9 @@ function formatPlayerData(player){
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Player.findOne({where:{name: "Tom Brady"}}).then(function(player) {
 
-      res.render("index", {
-        player:player
-      });
-    });
+    res.render("index");
+
   });
 
   app.get("/profile/players/:id", function(req, res) {

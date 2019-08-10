@@ -24,7 +24,7 @@
 
 body{
   color: white;
-  background: radial-gradient(#333a,#000), url(../assets/footballTexture.png);
+  background: radial-gradient(#333a 40%,#000), url(../assets/footballTexture.png);
   
 }
 
@@ -97,8 +97,9 @@ background-color: cadetblue
 }
 
 .profileContainer{
-  background: #0007;
-  border: 2px solid #000a
+  background: #0005;
+  border: 2px solid #000a;
+  border-radius: 10px;
 }
 
 .profileCard{
@@ -114,6 +115,6 @@ background-color: cadetblue
   padding: 0 10px 0 10px;
   height: 250px;
   background: #fff;
-  border: 2px solid #000a
+  border: 2px solid #000;
 }
 
