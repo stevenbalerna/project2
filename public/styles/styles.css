@@ -21,7 +21,17 @@
   
 }
 
+
 body{
+  color: white;
+  background: radial-gradient(#333a,#000), url(../assets/footballTexture.png);
+  
+}
+
+
+html, body{
+  margin: 0;
+  padding: 0;
 }
 
 #submit:hover{
@@ -87,7 +97,8 @@ background-color: cadetblue
 }
 
 .profileContainer{
-  background: #585;
+  background: #0007;
+  border: 2px solid #000a
 }
 
 .profileCard{
@@ -95,15 +106,14 @@ background-color: cadetblue
   padding: 10px;
   border-radius: 5px;
   /* border: 2px solid black; */
-  background: #fff;
+  /* background: #0005; */
 }
 
 .profileCard img{
- 
   margin: 10px;
   padding: 0 10px 0 10px;
   height: 250px;
-  background: #eef;
-  border: 1px solid #555;
+  background: #fff;
+  border: 2px solid #000a
 }
 
