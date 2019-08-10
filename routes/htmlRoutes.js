@@ -146,6 +146,30 @@ module.exports = function(app) {
 
   });
 
+  app.get("/refresh/:pos", function(req, res) {
+    db.Player.findAll({where: {position: req.params.pos}, include:[db.Stats2018, db.Projections2019]})
+      .then(function(data){
+
+        var players = data.map(function(player){
+          return formatPlayerData(player);
+        });
+
+        players.sort(function(a,b){
+          return parseInt(b.Stats2018["Fantasy PTs"]) - parseInt(a.Stats2018["Fantasy PTs"]);
+        });
+
+        res.render("partials/player-table", {
+          layout: false,
+          players: players,
+          helpers: {
+            plusOne: function(param){
+              return parseInt(param) + 1;
+            }
+          }
+        });
+    });
+  });
+
   app.get("/player/create", function(req, res) {
     res.render("form");
   });
