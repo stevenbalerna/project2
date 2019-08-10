@@ -159,7 +159,9 @@ $compareTable.on("click", "button", function(){
 $("#filterDrop").change(function(){
   var option = $("#filterDrop").find(":selected").attr("value");
   console.log(option);
-  location.assign(`/${option}`);
+  $.get('/refresh/' + option, function (resultHtml) {
+    $('#compareTable').html(resultHtml);
+  })
 });
 
 

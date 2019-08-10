@@ -1,0 +1,23 @@
+
+    <thead class="thead-dark">
+    <tr>
+    <th>Rank</th>
+    <th>Name</th>
+    {{#each players.[0].Stats2018 as |val key|}}
+    <th>{{key}}</th>
+    {{/each}}
+    <th></th>
+    </tr>
+</thead>
+<tbody>
+    {{#each players}}
+    <tr data-player={{this.id}}>
+    <td>{{plusOne @index}}</td>
+    <td><a href="/profile/players/{{this.id}}">{{this.bio.Name}}</a></td>
+    {{#each this.Stats2018 as |val key|}}
+    <td>{{val}}</td>
+    {{/each}}
+    <td><button data-target="{{@index}}">Select</button></td>
+    </tr>
+    {{/each}}
+</tbody>
