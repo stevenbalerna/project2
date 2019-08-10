@@ -3,13 +3,8 @@ var db = require("../models");
 function formatPlayerData(player){
   var stats = player.Stats2018.dataValues;
 
-  var projections;
+  var projections = player.Projections2019.dataValues;
 
-  if(player.Projections2019){
-    projections = player.Projections2019.dataValues;
-  }else{
-    projections = null;
-  }
 
   var newPlayer = {
     profilePic: player.profilePic,
@@ -47,16 +42,16 @@ function formatPlayerData(player){
     newPlayer.Stats2018["Rushing YDs"] = stats.rushingYards;
     newPlayer.Stats2018["Rushing TDs"] = stats.rushingTouchdowns;
 
-    if(projections){
-      newPlayer.Projections2019["Passing CMPs"] = projections.passingCompletions;
-      newPlayer.Projections2019["Passing ATTs"] = projections.passingAttempts;
-      newPlayer.Projections2019["Passing YDs"] = projections.passingYards;
-      newPlayer.Projections2019["Passing TDs"] = projections.passingTouchdowns;
-      newPlayer.Projections2019["Passing INTs"] = projections.passingInterceptions;
-      newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
-      newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
-      newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
-    }
+
+    newPlayer.Projections2019["Passing CMPs"] = projections.passingCompletions;
+    newPlayer.Projections2019["Passing ATTs"] = projections.passingAttempts;
+    newPlayer.Projections2019["Passing YDs"] = projections.passingYards;
+    newPlayer.Projections2019["Passing TDs"] = projections.passingTouchdowns;
+    newPlayer.Projections2019["Passing INTs"] = projections.passingInterceptions;
+    newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
+    newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
+    newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
+
 
     break;
 
@@ -68,74 +63,49 @@ function formatPlayerData(player){
     newPlayer.Stats2018["Receiving YDs"] = stats.receivingYards;
     newPlayer.Stats2018["Receiving TDs"] = stats.receivingTouchdowns;
     newPlayer.Stats2018["Fumbles Lost"] = stats.fumblesLost;
-    if(projections){
-      newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
-      newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
-      newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
-      newPlayer.Projections2019.Receptions = projections.receptions;
-      newPlayer.Projections2019["Receiving YDs"] = projections.receivingYards;
-      newPlayer.Projections2019["Receiving TDs"] = projections.receivingTouchdowns;
-    }
+
+    newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
+    newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
+    newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
+    newPlayer.Projections2019.Receptions = projections.receptions;
+    newPlayer.Projections2019["Receiving YDs"] = projections.receivingYards;
+    newPlayer.Projections2019["Receiving TDs"] = projections.receivingTouchdowns;
+
     break;
 
   case "WR":
-    newPlayer.Stats2018["Passing YDs"] = stats.passingYards;
-    newPlayer.Stats2018["Passing TDs"] = stats.passingTouchdowns;
-    newPlayer.Stats2018["Passing INTs"] = stats.passingInterceptions;
+  case "TE":
+    newPlayer.Stats2018.Receptions = stats.receptions;
+    newPlayer.Stats2018["Receiving YDs"] = stats.receivingYards;
+    newPlayer.Stats2018["Receiving TDs"] = stats.receivingTouchdowns;
     newPlayer.Stats2018["Rushing YDs"] = stats.rushingYards;
     newPlayer.Stats2018["Rushing TDs"] = stats.rushingTouchdowns;
-    newPlayer.Stats2018["Fantasy PTs/G"] = stats.fantasyPointsPerGame;
-    newPlayer.Stats2018["Fantasy PTs"] = stats.fantasyPoints;
-    if(projections){
-      newPlayer.Projections2019["Passing CMPs"] = projections.passingCompletions;
-      newPlayer.Projections2019["Passing ATTs"] = projections.passingAttempts;
-      newPlayer.Projections2019["Passing YDs"] = projections.passingYards;
-      newPlayer.Projections2019["Passing TDs"] = projections.passingTouchdowns;
-      newPlayer.Projections2019["Passing INTs"] = projections.passingInterceptions;
-      newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
-      newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
-      newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
-    }
+    newPlayer.Stats2018["Fumbles Lost"] = stats.fumblesLost;
+
+    newPlayer.Projections2019.Receptions = projections.receptions;
+    newPlayer.Projections2019["Receiving YDs"] = projections.receivingYards;
+    newPlayer.Projections2019["Receiving TDs"] = projections.receivingTouchdowns;
+    newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
+    newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
+    newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
+
     break;
 
-  case "TE":
-    newPlayer.Stats2018["Passing YDs"] = stats.passingYards;
-    newPlayer.Stats2018["Passing TDs"] = stats.passingTouchdowns;
-    newPlayer.Stats2018["Passing INTs"] = stats.passingInterceptions;
-    newPlayer.Stats2018["Rushing YDs"] = stats.rushingYards;
-    newPlayer.Stats2018["Rushing TDs"] = stats.rushingTouchdowns;
-    newPlayer.Stats2018["Fantasy PTs/G"] = stats.fantasyPointsPerGame;
-    newPlayer.Stats2018["Fantasy PTs"] = stats.fantasyPoints;
-    if(projections){
-      newPlayer.Projections2019["Passing CMPs"] = projections.passingCompletions;
-      newPlayer.Projections2019["Passing ATTs"] = projections.passingAttempts;
-      newPlayer.Projections2019["Passing YDs"] = projections.passingYards;
-      newPlayer.Projections2019["Passing TDs"] = projections.passingTouchdowns;
-      newPlayer.Projections2019["Passing INTs"] = projections.passingInterceptions;
-      newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
-      newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
-      newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
-    }
-    break;
 
   case "K":
-    newPlayer.Stats2018["Passing YDs"] = stats.passingYards;
-    newPlayer.Stats2018["Passing TDs"] = stats.passingTouchdowns;
-    newPlayer.Stats2018["Passing INTs"] = stats.passingInterceptions;
-    newPlayer.Stats2018["Rushing YDs"] = stats.rushingYards;
-    newPlayer.Stats2018["Rushing TDs"] = stats.rushingTouchdowns;
-    newPlayer.Stats2018["Fantasy PTs/G"] = stats.fantasyPointsPerGame;
-    newPlayer.Stats2018["Fantasy PTs"] = stats.fantasyPoints;
-    if(projections){
-      newPlayer.Projections2019["Passing CMPs"] = projections.passingCompletions;
-      newPlayer.Projections2019["Passing ATTs"] = projections.passingAttempts;
-      newPlayer.Projections2019["Passing YDs"] = projections.passingYards;
-      newPlayer.Projections2019["Passing TDs"] = projections.passingTouchdowns;
-      newPlayer.Projections2019["Passing INTs"] = projections.passingInterceptions;
-      newPlayer.Projections2019["Rushing ATTs"] = projections.rushingAttempts;
-      newPlayer.Projections2019["Rushing YDs"] = projections.rushingYards;
-      newPlayer.Projections2019["Rushing TDs"] = projections.rushingTouchdowns;
-    }
+    newPlayer.Stats2018["FGs Made"] = stats.fieldGoalsMade;
+    newPlayer.Stats2018["FG ATTs"] = stats.fieldGoalsAttempted;
+    newPlayer.Stats2018["FG PCT"] = stats.fieldGoalPercentage;
+    newPlayer.Stats2018["FG Longest Made"] = stats.fieldGoalsLongestMade;
+    newPlayer.Stats2018["Extra PTs"] = stats.extraPointsMade;
+    newPlayer.Stats2018["Extra PT ATTs"] = stats.extraPointsAttempted;
+
+    newPlayer.Projections2019["FGs Made"] = projections.fieldGoalsMade;
+    newPlayer.Projections2019["FG ATTs"] = projections.fieldGoalsAttempted;
+    newPlayer.Projections2019["FG PCT"] = projections.fieldGoalPercentage;
+    newPlayer.Projections2019["Extra PTs"] = projections.extraPointsMade;
+    newPlayer.Projections2019["Extra PT ATTs"] = projections.extraPointsAttempted;
+
     break;
 
   default:
